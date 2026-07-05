@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DosyanVar — CV'ni Kriterlere Göre Değerlendir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+<div class="folder-tab">DOSYA NO. <span id="case-number">--</span></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1><span class="stamp-word">Dosyan</span><span class="stamp-word accent">Var</span></h1>
+    <p class="subtitle">CV'ni gerçek kriterlere göre değerlendir. Adil, açık, dosyalı.</p>
+  </div>
+</header>
+
+<main class="dossier">
+
+  <section class="intake-form" id="intake-form">
+    <div class="form-card">
+      <h2><span class="field-index">01</span> CV'ni yükle</h2>
+      <label class="dropzone" id="dropzone" for="resume-input">
+        <span id="dropzone-label">PDF dosyasını buraya sürükle veya seç</span>
+        <input type="file" id="resume-input" accept="application/pdf" hidden />
+      </label>
+    </div>
+
+    <div class="form-card">
+      <h2><span class="field-index">02</span> Kriterleri / iş ilanını yapıştır</h2>
+      <textarea id="criteria-input" rows="8" placeholder="Örn: Bir iş ilanının tamamını, ya da 'React deneyimi, 3+ yıl backend, açık kaynak katkısı' gibi kriter listesini buraya yapıştır."></textarea>
+    </div>
+
+    <div class="form-card">
+      <h2><span class="field-index">03</span> GitHub kullanıcı adın <span class="optional">(opsiyonel)</span></h2>
+      <input type="text" id="github-input" placeholder="ör: octocat" />
+      <p class="hint">Verilirse açık kaynak / proje kriterlerinde kanıt olarak kullanılır.</p>
+    </div>
+
+    <button id="submit-btn" class="stamp-button">
+      <span>Dosyayı Değerlendir</span>
+    </button>
+    <p class="error-message" id="error-message" hidden></p>
+  </section>
+
+  <section class="report" id="report" hidden>
+    <div class="report-header">
+      <div class="score-stamp" id="score-stamp">
+        <span class="score-number" id="score-number">--</span>
+        <span class="score-label">/ 100</span>
+      </div>
+      <div class="report-summary">
+        <h2>Değerlendirme Özeti</h2>
+        <p id="overall-summary"></p>
+      </div>
+    </div>
+
+    <div class="report-columns">
+      <div class="strengths-col">
+        <h3>Güçlü Yönler</h3>
+        <ul id="strengths-list"></ul>
+      </div>
+      <div class="improvements-col">
+        <h3>Öncelikli İyileştirmeler</h3>
+        <ol id="improvements-list"></ol>
+      </div>
+    </div>
+
+    <h3 class="breakdown-title">Kriter Kriter Döküm</h3>
+    <div id="criteria-breakdown"></div>
+
+    <p class="github-warning" id="github-warning" hidden></p>
+
+    <button id="reset-btn" class="ghost-button">Yeni bir dosya aç</button>
+  </section>
+
+  <section class="loading" id="loading" hidden>
+    <div class="loading-stamp">İNCELENİYOR…</div>
+    <p>CV'n kriterlere karşı değerlendiriliyor, bu biraz sürebilir.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>DosyanVar, <a href="https://github.com/interviewstreet/hiring-agent" target="_blank" rel="noopener">interviewstreet/hiring-agent</a> projesinden ilham alınarak yapılmıştır. Değerlendirme Google Gemini ile üretilir, sonuçlar kesin bir gerçek değil, bir başlangıç noktasıdır.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
