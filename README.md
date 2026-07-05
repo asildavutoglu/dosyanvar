@@ -10,6 +10,10 @@ projesinden ilham alınarak yapıldı, ama akışı tersine çevirir: işverenin
 puanlaması yerine, adayın **kendi** CV'sini bir ilana göre önceden test etmesini
 sağlar.
 
+![DosyanVar genel değerlendirme ekranı](photos/screenshot-1.png)
+
+![DosyanVar kriter kriter döküm ekranı](photos/screenshot-2.png)
+
 ## Özellikler
 
 - 📄 PDF CV'den metin çıkarımı (PyMuPDF)
