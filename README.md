@@ -21,7 +21,7 @@ sağlar.
 ## Kurulum
 
 ```bash
-git clone <bu-reponun-url'si>
+git clone https://github.com/asildavutoglu/dosyanvar.git
 cd dosyanvar
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
